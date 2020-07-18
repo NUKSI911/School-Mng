@@ -1,0 +1,57 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      {% block css %}
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+      <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+      <link rel="stylesheet" href="{% static 'css/layout.css'%}" />
+        {% endblock %}
+    <title>School Management System</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-transparent sticky-top">
+        <div class="container">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navba"
+        aria-controls="navigation-index"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+
+        <span class="navbar-toggler-icon text-dark"></span>
+       
+      </button>
+      <div class="collapse navbar-collapse" id="navbar" >
+        <ul class="navbar-nav ml-auto">
+    
+       
+            <li>
+            <a href="{% url 'registration:course_reg'%}">
+            Course Registration     
+            </a>
+            </li>
+            </ul>
+      </div>
+    </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        {% block content %} {% endblock %}
+      </div>
+    </div>
+  {% block script %}
+    <script src="{% static 'js/jquery.min.js' %}" ></script>
+    <script src="{% static 'js/popper.min.js' %}" ></script>
+    <script src="{% static 'js/bootstrap.min.js' %}" ></script>
+  {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container bg-light">
+<div class="col-sm-12 col-md-6 col-lg-12">
+        <h3 class="text-yellow my-3">Kindly Fill The Student Registration Form</h3>
+<form class="form-control form-group" method="POST" action=''>{% csrf_token %}
+<table>
+{{form.as_table}}
+</table>
+<button type="submit" class="btn btn-default"> Submit </button>
+</form>
+{% endblock content %}
+{% block script %}
+  
+{% endblock script %}
